@@ -6,13 +6,13 @@ using std::endl;
 
 int main() {
   Stack* stack = new Stack(3);
-  stack->push(5);
-  stack->push(10);
-  stack->push(15);
+  for(int i = 0; i < 20; ++i) {
+    stack->push(i);
+  }
 
-  cout << stack->pop() << endl;
-  cout << stack->pop() << endl;
-  cout << stack->pop() << endl;
+  for(int i = 0; i < 20; ++i) {
+    cout << stack->pop() << endl;
+  }
 
   delete stack;
 

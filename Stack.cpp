@@ -15,23 +15,20 @@ void Stack::push(int value) {
 
   int newSize = initialSize*2;
 
-  Stack* newStack = new Stack(newSize);
+  int* newStack;
 
-  if(top > initialSize) {
+  if(top == initialSize) {
+    newStack = new int[newSize];
     for(int i = 0; i < newSize; ++i) {
       newStack[i] = theStack[i];
     }
   }
-  //adding a comment to Stack.cpp
-  //if theStack is full
-  // create new stack twice as big
-  // copy all elements to new stack
-  // delete old stack
-  // point old stack pointer to new stack
-  delete theStack;
+ 
+  delete[] theStack;
 
-  newStack[top] = value;
+  theStack = newStack;
 
+  theStack[top] = value;
   top++;
 }
 
